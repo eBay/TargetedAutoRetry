@@ -95,16 +95,19 @@ In our experience, using Targeted Auto Retry with just a few common test steps i
 
 [Note: Targeted Auto Retry is a powerful tool. It should be used for test steps where you are confident it's not reasonably possible to remove their flakiness directly by improving the code. One of its advantages over Global Auto Retry is that it doesn't silently bandaid over flakiness caused by bad code. But it is still capable of being abused by deliberately choosing to use it to wrap over bad code.]
 
-There are a number of implementation examples in [SwiftExampleTests.swift](Tests/TargetedAutoRetryTests/TargetedAutoRetryTests.swift)
+There are a number of implementation examples in [TargetedAutoRetryTests.swift](Tests/TargetedAutoRetryTests/TargetedAutoRetryTests.swift)
 
 ---
 
 ## Configuring the solution
 Targeted Auto Retry comes with a few built-in configurable parameters:
-retryAttempts: the number of retries to attempt before failing the test. Defaults to 3.
-actionDescription: optional custom description of the test step for use in reporting. This is used in the console reporting logs. e.g. for "Launch":
+
+* retryAttempts: the number of retries to attempt before failing the test. Defaults to 3.
+
+* actionDescription: optional custom description of the test step for use in reporting. This is used in the console reporting logs. e.g. for "Launch":
 ♻️♻️♻️▶️ [NEW RETRY ACTION: 2] Launch. Retry attempt: 2. Attempts remaining: 1
-failTestOnFailure: defaults to true, but in certain limited edge cases (such as nesting auto retry steps) it can make sense to not want to fail the test after using up all retry attempts.
+
+* failTestOnFailure: defaults to true, but in certain limited edge cases (such as nesting auto retry steps) it can make sense to not want to fail the test after using up all retry attempts.
 
 That has been enough to support all the native teams at eBay up to now. But the solution is very light-weight, so it would be easy to extend it to adopt additional functionality if needed.
 
@@ -223,16 +226,6 @@ func testMyAwesomeTest() {
     //test something on the page
 }
 ```
----
-## Configuring the solution
-Targeted Auto Retry comes with a few built-in configurable parameters:
-
-* retryAttempts: the number of retries to attempt before failing the test. Defaults to 3.
-
-* actionDescription: optional custom description of the test step for use in reporting. This is used in the console reporting logs. e.g. for "Launch":
-♻️♻️♻️▶️ [NEW RETRY ACTION: 2] Launch. Retry attempt: 2. Attempts remaining: 1
-
-* failTestOnFailure: defaults to true, but in certain limited edge cases (such as nesting auto retry steps) it can make sense to not want to fail the test after using up all retry attempts.
 ---
 ### Contributing
 Developed by Evan Pierce.
