@@ -64,7 +64,8 @@ See [Apple's guide to adding Package Dependencies to your app](https://developer
 * In Xcode, open File -> Swift Package -> Add Package Dependency.
 * If your app uses multiple projects, select the relevant project.
 * In the "Enter package repository URL" field, enter "https://github.com/eBay/TargetedAutoRetry"
-* Select the master Branch to get the latest version.
+* Select Version, Up to Next Major.  
+* Enter "1.0.0" for the version number.
 * Add `import TargetedAutoRetry` to a base test class file, and add the `import TargetedAutoRetry` in that file at the top, next to `import XCTest`.  Then add the `TargetedAutoRetry` protocol to your base test class. For example, if you have a base test class called `class MyAwesomeBaseTestClass: XCTestCase`, add the protocol there: `class MyAwesomeBaseTestClass: XCTestCase, TargetedAutoRetry`. All subclasses will inherit the same functionality without needing to import or add the protocol again.
 * Start implementing autoRetry in for any test steps which are prone to flakiness:
 
