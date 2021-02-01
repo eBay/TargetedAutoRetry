@@ -95,7 +95,7 @@ In our experience, using Targeted Auto Retry with just a few common test steps i
 
 [Note: Targeted Auto Retry is a powerful tool. It should be used for test steps where you are confident it's not reasonably possible to remove their flakiness directly by improving the code. One of its advantages over Global Auto Retry is that it doesn't silently bandaid over flakiness caused by bad code. But it is still capable of being abused by deliberately choosing to use it to wrap over bad code.]
 
-There are a number of implementation examples in [SwiftExampleTests.swift](SwiftExampleTests.swift)
+There are a number of implementation examples in [SwiftExampleTests.swift](Tests/TargetedAutoRetryTests/TargetedAutoRetryTests.swift)
 
 ---
 
