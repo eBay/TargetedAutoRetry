@@ -55,7 +55,7 @@ It's worth pointing out that it is entirely possible to run both Global Auto Ret
 Targeted Auto Retry is a powerful solution.  By design, every use is intentional.  This means that, unlike with Global Auto Retry, it's less likely that Targeted Auto Retry will accidentally gloss over bad code.  However, it's still entirely capable of covering for bad / flaky code by re-trying until it works.  Be sure to only use Targeted Auto Retry in cases where:
 * you have exhausted attempts to fix the flakiness directly
 * the test step being auto-retried is part of the setUp / tearDown for the main focus of the test
-* if there is a real intermittent bug in the test step, you don't want your test to catch it (note, the retry information will be captured in logs, and if your team uses an automation reporting system which exposes those logs, such as eBay's lucid-xc-reporter which will be open sourced in 2021 Q1, you will be able to see which tests were impacted by targeted retry attempts.  This is considered best practice for visibility)
+* if there is a real intermittent bug in the test step, you don't want your test to catch it (note, the retry information will be captured in logs, and if your team uses an automation reporting system which exposes those logs, such as eBay's lucid-xc-reporter which will be open sourced in 2021 Q3, you will be able to see which tests were impacted by targeted retry attempts.  This is considered best practice for visibility)
 * there is a separate test focused on this test step without auto retry, which will catch real intermittent bugs
 
 ---
@@ -63,7 +63,7 @@ Targeted Auto Retry is a powerful solution.  By design, every use is intentional
 See [Apple's guide to adding Package Dependencies to your app](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
 * In Xcode, open File -> Swift Package -> Add Package Dependency.
 * If your app uses multiple projects, select the relevant project.
-* In the "Enter package repository URL" field, enter "https://github.corp.ebay.com/TestInfrastructure/TargetedAutoRetry"
+* In the "Enter package repository URL" field, enter "https://github.com/eBay/TargetedAutoRetry"
 * Select the master Branch to get the latest version.
 * Add `import TargetedAutoRetry` to a base test class file, and add the `import TargetedAutoRetry` in that file at the top, next to `import XCTest`.  Then add the `TargetedAutoRetry` protocol to your base test class. For example, if you have a base test class called `class MyAwesomeBaseTestClass: XCTestCase`, add the protocol there: `class MyAwesomeBaseTestClass: XCTestCase, TargetedAutoRetry`. All subclasses will inherit the same functionality without needing to import or add the protocol again.
 * Start implementing autoRetry in for any test steps which are prone to flakiness:
