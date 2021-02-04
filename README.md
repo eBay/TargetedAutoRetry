@@ -1,8 +1,10 @@
-# TargetedAutoRetry
 
-Powerful Resilience Against Flaky Test Steps
+![](assets/TargetedAutoRetryTitle.png)
+# Powerful Resilience Against Flaky Test Steps
 
-![](assets/FlakyTwoRoads.png)
+<p align="center">
+  <img src="https://github.com/eBay/TargetedAutoRetry/blob/main/assets/FlakyTwoRoads.png" />
+</p>
 
 Flaky tests are a notorious industry wide problem, especially for UI tests. Ever since powerful automated testing tools have been available, developers and testers have struggled to reduce their flakiness.
 ## Global Auto Retry
