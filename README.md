@@ -1,7 +1,6 @@
 
 ![](assets/TargetedAutoRetryTitle.png)
-
-Powerful Resilience Against Flaky Test Steps
+# Powerful Resilience Against Flaky Test Steps
 
 <p align="center">
   <img src="https://github.com/eBay/TargetedAutoRetry/blob/main/assets/FlakyTwoRoads.png" />
