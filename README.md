@@ -1,5 +1,5 @@
 
-# TargetedAutoRetry ![](assets/TargetedAutoRetryIcon.png)
+![](assets/TargetedAutoRetryTitle.png)
 
 Powerful Resilience Against Flaky Test Steps
 
